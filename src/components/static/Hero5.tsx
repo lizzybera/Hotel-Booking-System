@@ -1,27 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from "../../assets/tallinn-estonia-view-of-historical-rotermann-cit-2021-04-04-18-33-30-utc-440x293.jpg"
-import Button from './Button'
+import img from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
 
-const Hero = () => {
+const Hero5 = () => {
   return (
     <div>
       <Container>
         <Main>
 
-      <Div>
-
-      <Text>LIVE THE EXPERIENCE</Text>
-
-      <Title>MAKE
-YOURSELF
-AT HOME</Title>
-<ButtonHolder>
-    <Button 
-    b='2px solid white'
-    text='VIEW OUR ROOMS'
-    />
-</ButtonHolder>
+        <Div>
+      <Title> LUXURY SUITE</Title>
       </Div>
         </Main>
       </Container>
@@ -29,12 +17,7 @@ AT HOME</Title>
   )
 }
 
-export default Hero
-
-const ButtonHolder = styled.div`
-/* margin-top: 30px; */
-height: 70px;
-`
+export default Hero5
 
 const Title = styled.div`
 font-size: 70px;

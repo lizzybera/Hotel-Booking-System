@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from '../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg'
+import img from '../../assets/ssvppppp.png'
 
 const Second2 = () => {
   return (

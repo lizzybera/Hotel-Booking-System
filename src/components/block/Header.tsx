@@ -2,8 +2,15 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import img from "../../assets/hoteller-modern-logo-black.png"
 import {RiArrowDropDownLine} from "react-icons/ri"
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
+
+  const [drop, setDrop] = useState(false)
+
+  const Toggle = () =>{
+    setDrop(!drop)
+  }
 
   const [show, setShow] = useState<boolean>(false)
 
@@ -31,13 +38,11 @@ const Header = () => {
         <Holder>
           <NavHolder>
             <Navs>Home</Navs>
-            <Navs>Our Rooms <Icon /></Navs>
+            <Navs onClick={Toggle}>Our Rooms <Icon /></Navs>
             <Navs>Contact</Navs>
           </NavHolder>
 
-          {/* <ButtonHolder> */}
             <Button>Book Now</Button>
-          {/* </ButtonHolder> */}
         </Holder>
         <Line />
         </MainHolder>
@@ -54,13 +59,22 @@ const Header = () => {
       <Holder>
         <NavHolder>
           <Navs>Home</Navs>
-          <Navs>Our Rooms <Icon /></Navs>
+          <Navs onClick={Toggle}>Our Rooms <Icon /></Navs>
           <Navs>Contact</Navs>
         </NavHolder>
           <Button>Book Now</Button>
       </Holder>
       <Line />
       </MainHolder>
+
+      {drop ? (
+        <Drop>
+          <H4 to="/superior">Superior room</H4>
+          <H4 to="/signature">Signature room</H4>
+          <H4 to="/deluxe">Deluxe room</H4>
+          <H4 to="/luxury">Luxury Suite</H4>
+        </Drop>
+      )  : null}
 
     </Main>
   </Container>
@@ -70,6 +84,25 @@ const Header = () => {
 }
 
 export default Header
+const H4 = styled(NavLink)`
+font-size: 20px;
+text-decoration: none;
+cursor: pointer;
+color: white;
+height: 30px;
+`
+const Drop = styled.div`
+  position: absolute;
+  width: 170px;
+  flex-direction: column;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  top: 85px;
+  left: 250px;
+
+`
 
 const Icon  = styled(RiArrowDropDownLine)`
 font-size: 25px;
@@ -156,6 +189,7 @@ height: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
+position: relative;
 `
 
 const Container = styled.div<{bg: string, color: string}>`

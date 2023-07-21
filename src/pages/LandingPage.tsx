@@ -9,7 +9,6 @@ import Fourth from '../components/reUse/Fourth'
 const LandingPage = () => {
   return (
     <div>
-      {/* <Header /> */}
       <Hero />
       <First />
       <Second />

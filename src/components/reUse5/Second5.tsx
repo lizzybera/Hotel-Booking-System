@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from '../../assets/ssvppppp.png'
+import img from '../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg'
 
-const Second3 = () => {
+const Second5 = () => {
   return (
     <div>
         <Container>
@@ -104,7 +104,7 @@ const Second3 = () => {
   )
 }
 
-export default Second3
+export default Second5
 
 const Button = styled.div`
 background-color: black;

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from "../../assets/food-on-a-table-in-a-hotel-room-2021-04-02-15-19-22-utc-683x1024.jpg"
+import img from "../../assets/two-laughing-guests-checking-in-together-at-a-hote-MUXSSNK-683x1024.jpeg"
 import img3 from "../../assets/noun_Fitness_2071916.png"
 
-const First2 = () => {
+const First4 = () => {
   return (
     <div>
         <Container>
@@ -78,7 +78,7 @@ const First2 = () => {
   )
 }
 
-export default First2
+export default First4
 
 
 const Words2 = styled.div`

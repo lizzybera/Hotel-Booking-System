@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import img from "../../assets/tallinn-estonia-view-of-historical-rotermann-cit-2021-04-04-18-33-30-utc-440x293.jpg"
-import Button from './Button'
 
-const Hero = () => {
+const BookHero = () => {
   return (
     <div>
       <Container>
@@ -11,17 +10,12 @@ const Hero = () => {
 
       <Div>
 
-      <Text>LIVE THE EXPERIENCE</Text>
+      <Text>EXCLUSIVE ENVIRONMENT
+</Text>
 
-      <Title>MAKE
-YOURSELF
-AT HOME</Title>
-<ButtonHolder>
-    <Button 
-    b='2px solid white'
-    text='VIEW OUR ROOMS'
-    />
-</ButtonHolder>
+      <Title>DISCOVER
+OUR ROOMS
+AND SUITES</Title>
       </Div>
         </Main>
       </Container>
@@ -29,7 +23,7 @@ AT HOME</Title>
   )
 }
 
-export default Hero
+export default BookHero
 
 const ButtonHolder = styled.div`
 /* margin-top: 30px; */

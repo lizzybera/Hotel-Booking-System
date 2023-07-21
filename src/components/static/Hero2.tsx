@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
-import Button from './Button'
+import img from "../../assets/francesca-tosolini-tHkJAMcO3QE-unsplash-1024x683.jpg"
 
 const Hero2 = () => {
   return (

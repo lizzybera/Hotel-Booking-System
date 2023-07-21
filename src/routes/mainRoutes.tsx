@@ -6,6 +6,10 @@ import SignIn from "../pages/auth/SignIn"
 import PrivateRoutes from "./PrivateRoutes"
 import SuperiorRoom from "../pages/SuperiorRoom"
 import DeluxeRoom from "../pages/DeluxeRoom"
+import SignatureRoom from "../pages/SignatureRoom"
+import LuxurySuite from "../pages/LuxurySuite"
+import BookNow from "../pages/BookNow"
+import InputRoom from "../pages/InputRoom"
 
 
 export const mainRoutes = createBrowserRouter([
@@ -27,6 +31,19 @@ export const mainRoutes = createBrowserRouter([
                 path: "/deluxe",
                 element: <DeluxeRoom />
             }
+            ,{
+                path: "/signature",
+                element: <SignatureRoom />
+            }
+            ,{
+                path: "/luxury",
+                element: <LuxurySuite />
+            }
+            ,{
+                path: "/booknow",
+                element: <BookNow />
+            }
+            
         ]
     },{
         path: "/register",
@@ -35,5 +52,8 @@ export const mainRoutes = createBrowserRouter([
     ,{
         path: "/signIn",
         element: <SignIn />
+    },{
+        path: "/input",
+        element: <InputRoom />
     }
 ])
