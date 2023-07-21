@@ -4,6 +4,8 @@ import LandingPage from "../pages/LandingPage"
 import Register from "../pages/auth/register"
 import SignIn from "../pages/auth/SignIn"
 import PrivateRoutes from "./PrivateRoutes"
+import SuperiorRoom from "../pages/SuperiorRoom"
+import DeluxeRoom from "../pages/DeluxeRoom"
 
 
 export const mainRoutes = createBrowserRouter([
@@ -17,6 +19,13 @@ export const mainRoutes = createBrowserRouter([
             {
                 index: true,
                 element: <LandingPage />
+            },{
+                path: "/superior",
+                element: <SuperiorRoom />
+            }
+            ,{
+                path: "/deluxe",
+                element: <DeluxeRoom />
             }
         ]
     },{

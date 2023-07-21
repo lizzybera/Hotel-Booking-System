@@ -44,7 +44,14 @@ const Footer = () => {
             </Div3>
           </Up>
           <Line />
-          <Down></Down>
+          <Down>
+            <Copy>
+© Copyright Hoteller Theme Demo – Theme by ThemeGoods</Copy>
+            <Terms>
+              <Term>Terms & Conditions</Term>
+              <Policy>Privacy Policy</Policy>
+            </Terms>
+          </Down>
         </Main>
       </Container>
     </div>
@@ -52,6 +59,25 @@ const Footer = () => {
 }
 
 export default Footer
+
+const Policy = styled.div`
+margin-left: 20px;
+`
+
+const Term = styled.div``
+const Terms = styled.div`
+/* width: 300px; */
+display: flex;
+`
+const Copy = styled.div``
+const Down = styled.div`
+width: 80%;
+/* background-color: red; */
+height: 80px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
 
 const Title = styled.div`
 font-weight: 700;
@@ -80,17 +106,9 @@ margin-bottom: 20px;
 
 const Div = styled.div``
 
-const Down = styled.div`
-width: 80%;
-background-color: red;
-height: 50px;
-`
-
 const Up = styled.div`
 width: 80%;
-/* background-color: blue; */
-height: 400px;
-border-bottom: 1px solid ;
+height: 420px;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -113,7 +131,7 @@ align-items: center;
 
 const Container = styled.div`
 width: 100%;
-min-height: 450px;
+min-height: 500px;
 background-color:#000000;
 display: flex;
 justify-content: center;

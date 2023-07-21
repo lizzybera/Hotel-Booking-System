@@ -12,9 +12,9 @@ const LandingPage = () => {
       {/* <Header /> */}
       <Hero />
       <First />
-      {/* <Second />
+      <Second />
       <Third />
-      <Fourth /> */}
+      <Fourth />
     </div>
   )
 }
