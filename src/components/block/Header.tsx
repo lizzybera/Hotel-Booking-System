@@ -1,43 +1,86 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import img from "../../assets/hoteller-modern-logo-black.png"
+import {RiArrowDropDownLine} from "react-icons/ri"
 
 const Header = () => {
+
+  const [show, setShow] = useState<boolean>(false)
+
+  const onChange = ()=>{
+    if (window.scrollY >= 70){
+      setShow(true)
+    }else{
+      setShow(false)
+    }
+  }
+
+  window.addEventListener("scroll", onChange)
+
   return (
     <div>
-      <Container>
-        <Main>
-          <LogoDiv>
-            <Logo src={img}/>
-          </LogoDiv>
+     {
+      show?  
+      <Container bg='white' color='black'>
+      <Main>
+        <LogoDiv>
+          <Logo src={img}/>
+        </LogoDiv>
 
-          <MainHolder>
-          <Holder>
-            <NavHolder>
-              <Navs>Home</Navs>
-              <Navs>About</Navs>
-              <Navs>About</Navs>
-              <Navs>Contact</Navs>
-            </NavHolder>
+        <MainHolder>
+        <Holder>
+          <NavHolder>
+            <Navs>Home</Navs>
+            <Navs>Our Rooms <Icon /></Navs>
+            <Navs>Contact</Navs>
+          </NavHolder>
 
-            {/* <ButtonHolder> */}
-              <Button>Book Now</Button>
-            {/* </ButtonHolder> */}
-          </Holder>
-          <Line />
-          </MainHolder>
-        </Main>
-      </Container>
+          {/* <ButtonHolder> */}
+            <Button>Book Now</Button>
+          {/* </ButtonHolder> */}
+        </Holder>
+        <Line />
+        </MainHolder>
+      </Main>
+    </Container>
+    :
+    <Container bg='' color='white'>
+    <Main>
+      <LogoDiv>
+        <Logo src={img}/>
+      </LogoDiv>
+
+      <MainHolder>
+      <Holder>
+        <NavHolder>
+          <Navs>Home</Navs>
+          <Navs>Our Rooms <Icon /></Navs>
+          <Navs>Contact</Navs>
+        </NavHolder>
+          <Button>Book Now</Button>
+      </Holder>
+      <Line />
+      </MainHolder>
+
+    </Main>
+  </Container>
+     }
     </div>
   )
 }
 
 export default Header
 
+const Icon  = styled(RiArrowDropDownLine)`
+font-size: 25px;
+margin-left: 10px;
+margin-top: 3px;
+`
+
 const Line = styled.div`
 width: 100%;
 height: 1px;
-background-color: silver;
+background-color: white;
 `
 const MainHolder = styled.div`
 width: 85%;
@@ -75,6 +118,8 @@ const Navs = styled.div`
 font-size: 15px;
 font-weight: 600;
 cursor: pointer;
+display: flex;
+align-items: center;
 `
 
 const NavHolder = styled.div`
@@ -113,14 +158,15 @@ justify-content: space-between;
 align-items: center;
 `
 
-const Container = styled.div`
+const Container = styled.div<{bg: string, color: string}>`
 display: flex;
 align-items: center;
 justify-content: center;
 width: 100%;
-height: 80px;
+height: 85px;
 position: fixed;
 z-index: 99;
-color: white;
-/* background-color: antiquewhite; */
+color: ${({color})=> color};
+background-color: ${({bg})=> bg};
+transition: all 300ms;
 `

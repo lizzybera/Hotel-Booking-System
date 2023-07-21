@@ -4,6 +4,7 @@ import Hero from '../components/static/Hero'
 import First from '../components/reUse/First'
 import { Second } from '../components/reUse/Second'
 import Third from '../components/reUse/Third'
+import Fourth from '../components/reUse/Fourth'
 
 const LandingPage = () => {
   return (
@@ -11,8 +12,9 @@ const LandingPage = () => {
       {/* <Header /> */}
       <Hero />
       <First />
-      <Second />
+      {/* <Second />
       <Third />
+      <Fourth /> */}
     </div>
   )
 }

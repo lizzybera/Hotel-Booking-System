@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '../static/Button'
+import Card from '../static/Card'
+import img from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
 
 const Third = () => {
   return (
@@ -14,10 +16,26 @@ const Third = () => {
                         </Up>
 
                         <Div2>
-                            <Button />
+                            <Button 
+                            b='1px solid black'
+                            text='VIEW ALL ROOMS'
+                            />
                         </Div2>
                 </Mains>
-                <Down></Down>
+                <Down>
+                    <Card 
+                    img={img}
+                    title='Signature Room'
+                    amount='$900'
+                    word='70 m2/ 3 adults 2 children'
+                    />
+                    <Card 
+                    img={img}
+                    title='Signature Room'
+                    amount='$900'
+                    word='70 m2/ 3 adults 2 children'
+                    />
+                </Down>
             </Main>
         </Container>
     </div>
@@ -32,7 +50,9 @@ width: 100%;
 justify-content: space-between;
 align-items: center;
 `
-const Down = styled.div``
+const Down = styled.div`
+display: flex;
+`
 
 const Div2 = styled.div``
 
@@ -71,10 +91,11 @@ height: 100%;
 
 const Container = styled.div`
 width: 100%;
-height: 500px;
+min-height: 500px;
 background-color: red;
 background-color: #F0F0F0;
 display: flex;
 justify-content: center;
 align-items: center;
+padding: 60px 0;
 `

@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Button = () => {
+interface iButton{
+  b?: string,
+  text?: string
+}
+const Button: React.FC<iButton> = ({b, text}) => {
   return (
     <div>
-        <Main>
-            View Our Room
+        <Main b={`${b}`}>
+        {text}
         </Main>
     </div>
   )
@@ -13,12 +17,12 @@ const Button = () => {
 
 export default Button
 
-const Main = styled.div`
+const Main = styled.div<{b : string}>`
     /* padding: 10px 10px; */
-    width: 180px;
-    height: 55px;
+    width: 182px;
+    height: 58px;
     background-color: transparent;
-    border: 1px solid white;
+    border: ${({b})=> b};
     display: flex;
     justify-content: center;
     align-items: center;

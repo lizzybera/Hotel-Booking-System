@@ -19,7 +19,10 @@ const Hero = () => {
 YOURSELF
 AT HOME</Title>
 <ButtonHolder>
-    <Button />
+    <Button 
+    b='2px solid white'
+    text='VIEW OUR ROOMS'
+    />
 </ButtonHolder>
       </Div>
         </Main>
