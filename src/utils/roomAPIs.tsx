@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const URL = "http://localhost:6589/api/v1/room"
+const URL = "https://perfectroom.onrender.com/api/v1/room"
 
 export const createRoom = async (data: any) =>{
     try {

@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const URL = "http://localhost:6589/api/v1/auth"
+const URL = "https://perfectroom.onrender.com/api/v1/auth"
 
 export const createUser = async (data: any) =>{
     try {
