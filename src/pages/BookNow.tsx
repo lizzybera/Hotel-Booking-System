@@ -4,7 +4,7 @@ import BookHero from "../components/static/BookHero";
 import img from "../assets/francesca-tosolini-tHkJAMcO3QE-unsplash-1024x683.jpg";
 import img2 from "../assets/noun_Fitness_2071916.png";
 // import { useQuery } from "@tanstack/react-query"
-import { readRooms } from "../utils/roomAPIs";
+// import { readRooms } from "../utils/roomAPIs";
 
 // const {data} = useQuery({
 //     queryKey : ["rooms"],
@@ -254,11 +254,6 @@ const Mains = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Down = styled.div`
-  display: flex;
-`;
-
-const Div2 = styled.div``;
 
 const Title = styled.div`
   font-size: 55px;

@@ -25,11 +25,6 @@ AND SUITES</Title>
 
 export default BookHero
 
-const ButtonHolder = styled.div`
-/* margin-top: 30px; */
-height: 70px;
-`
-
 const Title = styled.div`
 font-size: 70px;
 margin-top: 10px;

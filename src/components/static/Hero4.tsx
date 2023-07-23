@@ -27,12 +27,6 @@ font-weight: 700;
 line-height: 1.2;
 `
 
-const Text  = styled.div`
-font-size: 16px;
-font-weight: 700;
-word-spacing: 5px;
-`
-
 const Div = styled.div`
 width: 100%;
 margin-top: 40px;
