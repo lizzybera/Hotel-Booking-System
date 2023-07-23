@@ -1,8 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
-import img2 from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
+import img from "../../assets/close-up-of-couple-at-table-in-traditional-english-2021-04-02-20-02-18-utc-1024x683.jpeg"
+import img2 from "../../assets/female-chef-piping-a-cake-in-kitchen-at-hotel-2021-04-04-18-02-58-utc-768x512.jpeg"
 import img3 from "../../assets/noun_Fitness_2071916.png"
+import img4 from "../../assets/noun_spa-sauna-service_2701942.png"
+import img5 from "../../assets/noun_Pool_4017800.png"
+import img6 from "../../assets/noun_spa_2242167.png"
+import img7 from "../../assets/noun_Garden_4113167.png"
+import img8 from "../../assets/noun_City_4117559.png"
 
 export const Second = () => {
   return (
@@ -37,23 +42,23 @@ export const Second = () => {
                         <Words>FITNESS CENTER</Words>
                     </Box>
                     <Box>
-                        <Pic3 src={img3}/>
+                        <Pic3 src={img4}/>
                         <Words>FITNESS CENTER</Words>
                     </Box>
                     <Box>
-                        <Pic3 src={img3}/>
+                        <Pic3 src={img5}/>
                         <Words>FITNESS CENTER</Words>
                     </Box>
                     <Box>
-                        <Pic3 src={img3}/>
+                        <Pic3 src={img6}/>
                         <Words>FITNESS CENTER</Words>
                     </Box>
                     <Box>
-                        <Pic3 src={img3}/>
+                        <Pic3 src={img7}/>
                         <Words>FITNESS CENTER</Words>
                     </Box>
                     <Box>
-                        <Pic3 src={img3}/>
+                        <Pic3 src={img8}/>
                         <Words>FITNESS CENTER</Words>
                     </Box>
                   </Div>
@@ -72,8 +77,7 @@ margin-top: 10px;
 `
 
 const Pic3 = styled.img`
-/* width: 50px; */
-height: 25px;
+height: 30px;
 object-fit: cover;
 `
 

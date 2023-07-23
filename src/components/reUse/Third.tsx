@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../static/Button'
 import Card from '../static/Card'
-import img from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
+import img from "../../assets/chastity-cortijo-R-w5Q-4Mqm0-unsplash.jpg"
+import img2 from "../../assets/francesca-tosolini-tHkJAMcO3QE-unsplash-1024x683.jpg"
 
 const Third = () => {
   return (
@@ -30,7 +31,7 @@ const Third = () => {
                     word='70 m2/ 3 adults 2 children'
                     />
                     <Card 
-                    img={img}
+                    img={img2}
                     title='Signature Room'
                     amount='$900'
                     word='70 m2/ 3 adults 2 children'

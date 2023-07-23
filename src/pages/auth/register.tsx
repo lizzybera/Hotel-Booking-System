@@ -74,7 +74,7 @@ register, reset, handleSubmit, formState : {errors}
                 </InputHolder>
 
                 <Button type='submit'> SIGN UP </Button>
-                <Link to="/signIn"> <Sign > sign in </Sign> </Link>
+                <Link to="/signIn" style={{"textDecoration" : "none"}}> <Sign > sign in </Sign> </Link>
             </Main>
         </Container>
     </div>
@@ -88,6 +88,7 @@ font-size: 15px;
 color: blue;
 margin-top: 15px;
 margin-bottom: 15px;
+text-decoration: none;
 `
 const Button = styled.button`
 width: 90%;
@@ -96,7 +97,7 @@ outline: none;
 border: none;
 font-weight: 700;
 color: white;
-background-color: #248eea;
+background-color: #1aa7cf;
 cursor: pointer;
 margin-top: 15px;
 `
@@ -106,7 +107,9 @@ color: red;
 `
 const Input = styled.input`
 outline: none;
-border: 1px solid blue;
+border: 1px solid #1aa7cf;
+border-radius: 5px;
+background-color: transparent;
 width: 90%;
 padding-left: 10px;
 height: 40px;
@@ -142,8 +145,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-border: 2px solid blue;
+/* border: 2px solid blue; */
 border-radius: 15px;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `
 
 const Container = styled.div`
@@ -152,4 +156,6 @@ min-height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
+background: rgb(34,193,195);
+background: linear-gradient(236deg, rgba(34,193,195,1) 0%, rgba(45,253,60,0.9009978991596639) 77%);
 `

@@ -67,16 +67,15 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-/* margin-top: 20px; */
 height: 100%;
 `
 const Des = styled.div`
-display: flex;
 min-height: 50px;
-width: 450px;
 margin-bottom: 10px;
 display: flex;
 justify-content: space-between;
+width: 70%;
+display: flex;
 `
 const Pics = styled.img`
 width: 100%;
@@ -94,13 +93,14 @@ top: 640px;
 `
 
 const Right = styled.div`
-width: 50%;
+width: 100%;
 min-height: 830px;
 background-color: #F0F0F0;
 display: flex;
 justify-content: flex-end;
 align-items: center;
 flex-direction: column;
+
 `
 
 const Text = styled.div`
@@ -115,7 +115,7 @@ font-weight: 600;
 width: 100px;
 margin-bottom: 20px;
 color: #353535;
-/* margin-top: 20px; */
+margin-top: 20px;
 `
 const WriteUps = styled.div`
 margin-left: 10px;
@@ -137,7 +137,6 @@ justify-content: flex-end;
 const Left = styled.div`
 width: 50%;
 height: 100%;
-/* background-color: green; */
 display: flex;
 align-items: center;
 justify-content: flex-start;
@@ -147,9 +146,6 @@ const Main = styled.div`
 display: flex;
 width: 100%;
 height: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
 `
 
 const Container = styled.div`
@@ -158,6 +154,4 @@ justify-content: center;
 align-items: center;
 min-height: 650px;
 width: 100%;
-/* padding: 30px 0; */
-/* background-color: blue; */
 `

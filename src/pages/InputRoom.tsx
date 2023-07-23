@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import { BsImageFill } from "react-icons/bs";
+import { BsImageFill } from "react-icons/bs";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-const InputRoom = () => {
+const UploadPage = () => {
   const navigate = useNavigate();
   const [coverImage, setCoverImage] = useState("");
   const [title, setTitle] = useState("");
   const [preview, setPreview] = useState("");
   const [summary, setSummary] = useState("");
-  // const [author, setAuthor] = useState("");
-  // const [category, setCategory] = useState("");
+  const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleImage = (e: any) => {
     const file = e.target.files![0];
@@ -29,11 +28,11 @@ const InputRoom = () => {
     formData.append("title", title);
     formData.append("coverImage", coverImage);
     formData.append("summary", summary);
-    // formData.append("category", category);
-    // formData.append("author", author);
+    formData.append("category", category);
+    formData.append("author", author);
 
     await axios
-      .post("http://localhost:6589/api/v1/room/create", formData)
+      .post("http://localhost:2442/server/newBook", formData)
       .then((res) => {
         alert("upload successfull");
         navigate("/");
@@ -44,43 +43,67 @@ const InputRoom = () => {
     <Container>
       <Wrapper>
         <Card>
+          {/* <Circle>
+						<BsImageFill />
+						<span>upload file</span>
+					</Circle> */}
 
           <Circle>
             <Img src={preview} />
           </Circle>
 
           <Input onChange={handleImage} id="pix" type="file" />
-          <Button htmlFor="pix">Upload Room Image</Button>
+          <Button htmlFor="pix">Upload Cover Image</Button>
 
           <Inp
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setTitle(e.target.value);
             }}
-            placeholder="Room Name"
-          />
-          <Inp
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setTitle(e.target.value);
-            }}
-            placeholder="Room Size"
+            placeholder="Enter Title"
           />
           <TexArea
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
               setSummary(e.target.value);
             }}
-            placeholder="Room Details"
+            placeholder="Summary..."
           />
-          
-            <Button2  bg="black">
+          <Inp
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setAuthor(e.target.value);
+            }}
+            placeholder="Enter Author name"
+          />
+          <Select
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+              setCategory(e.target.value);
+            }}
+          >
+            <option>select a category</option>
+            <option value="comedy">Comedy</option>
+            <option value="music">Music</option>
+            <option value="romance">Romance</option>
+          </Select>
+
+          {title !== "" &&
+          coverImage !== "" &&
+          summary !== "" &&
+          author !== "" &&
+          category !== "" ? (
+            <Button2 onClick={uploadData} cp="pointer" bg="black">
               Submit
             </Button2>
+          ) : (
+            <Button2 cp="not-allowed" bg="silver">
+              Submit
+            </Button2>
+          )}
         </Card>
       </Wrapper>
     </Container>
   );
 };
 
-export default InputRoom;
+export default UploadPage;
 
 const Img = styled.img`
   height: 100%;
@@ -88,7 +111,7 @@ const Img = styled.img`
   object-fit: cover;
 `;
 
-const Button2 = styled.button<{ bg: string }>`
+const Button2 = styled.button<{ bg: string; cp: string }>`
   height: 40px;
   width: 150px;
   background-color: ${(props) => props.bg};
@@ -97,6 +120,7 @@ const Button2 = styled.button<{ bg: string }>`
   outline: none;
   border-radius: 5px;
   transition: all 350ms;
+  cursor: ${(props) => props.cp};
   margin-top: 10px;
   :hover {
     transform: scale(0.95);
@@ -123,7 +147,7 @@ const TexArea = styled.textarea`
   width: 350px;
   height: 70px;
   border-radius: 3px;
-  border: 0.7px solid blue;
+  border: 0.7px solid silver;
   outline-color: #f8cbe0;
   padding-left: 10px;
   resize: none;
@@ -138,7 +162,7 @@ const Inp = styled.input`
   width: 350px;
   height: 30px;
   border-radius: 3px;
-  border: 0.7px solid blue;
+  border: 0.7px solid silver;
   outline-color: #f8cbe0;
   padding-left: 10px;
 
@@ -153,7 +177,7 @@ const Input = styled.input`
 const Button = styled.label`
   height: 40px;
   width: 200px;
-  background-color: blue;
+  background-color: black;
   color: white;
   display: flex;
   justify-content: center;
@@ -169,8 +193,8 @@ const Button = styled.label`
 
 const Circle = styled.div`
   height: 150px;
-  width: 150px;
-  border-radius: 50%;
+  width: 250px;
+  border-radius: 5px;
   /* border-radius: 50%; */
   background-color: #e6e4e4;
   display: flex;
@@ -185,9 +209,9 @@ const Circle = styled.div`
 `;
 
 const Card = styled.div`
-  box-shadow: rgba(15, 37, 176, 0.02) 0px 1px 3px 0px,
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  width: 400px;
+  width: 600px;
   /* height: 300px; */
   margin-top: 100px;
   display: flex;
@@ -195,8 +219,6 @@ const Card = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 10px;
-  border: 2px solid blue;
-  border-radius: 10px;
 
   @media screen and (max-width: 500px) {
     width: 270px;

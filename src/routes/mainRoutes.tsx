@@ -10,19 +10,20 @@ import SignatureRoom from "../pages/SignatureRoom"
 import LuxurySuite from "../pages/LuxurySuite"
 import BookNow from "../pages/BookNow"
 import InputRoom from "../pages/InputRoom"
+import PostRooms from "../pages/PostRooms"
 
 
 export const mainRoutes = createBrowserRouter([
     {
         path: "/",
         element: 
-        <PrivateRoutes>
-            <LayOut />
-            </PrivateRoutes>,
+            <LayOut />,
         children: [
             {
                 index: true,
-                element: <LandingPage />
+                element: <PrivateRoutes>
+                    <LandingPage />
+                </PrivateRoutes>
             },{
                 path: "/superior",
                 element: <SuperiorRoom />
@@ -55,5 +56,9 @@ export const mainRoutes = createBrowserRouter([
     },{
         path: "/input",
         element: <InputRoom />
+    }
+    ,{
+        path: "/post",
+        element: <PostRooms />
     }
 ])

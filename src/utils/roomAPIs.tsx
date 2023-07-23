@@ -4,8 +4,10 @@ const URL = "http://localhost:6589/api/v1/room"
 
 export const createRoom = async (data: any) =>{
     try {
-        
-        return await axios.post(`${URL}/create`, data).then((res)=>{
+        const config: any = {
+            "content-type" : "multiport/form-data"
+        }
+        return await axios.post(`${URL}/create`, data, config).then((res)=>{
             return res.data.data
         })
 
@@ -15,15 +17,27 @@ export const createRoom = async (data: any) =>{
     }
 }
 
-// export const signUser = async (data : any) =>{
-//     try {
+export const readRoom = async (data : any, id: string) =>{
+    try {
         
-//         return await axios.post(`${URL}/sign-in`, data).then((res)=>{
-//             return res.data.data
-//         })
+        return await axios.post(`${URL}/${id}/read-one`, data).then((res)=>{
+            return res.data.data
+        })
 
-//     } catch (error) {
-//         console.log(error);
+    } catch (error) {
+        console.log(error);
         
-//     }
-// }
+    }
+}
+export const readRooms = async () =>{
+    try {
+        
+        return await axios.post(`${URL}/read`).then((res)=>{
+            return res.data.data
+        })
+
+    } catch (error) {
+        console.log(error);
+        
+    }
+}

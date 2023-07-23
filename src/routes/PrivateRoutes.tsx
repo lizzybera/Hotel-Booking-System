@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from 'react'
+import React, { PropsWithChildren } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 
@@ -8,8 +8,8 @@ const PrivateRoutes : React.FC<PropsWithChildren> = ({children}) => {
   return (
     <div>
         {
-            user? <Navigate to="/signIn" />  : 
-            <div> {children} </div>
+            user?  <Navigate to="/signIn" /> : 
+             <div> {children} </div>
         }
     </div>
   )

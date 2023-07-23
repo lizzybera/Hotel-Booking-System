@@ -3,20 +3,17 @@ import styled from 'styled-components'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-import { signUser } from '../../utils/authAPIs'
 import { Link, useNavigate } from 'react-router-dom'
-import {useSelector, useDispatch} from "react-redux"
-import { createUser } from '../../global/Authglobal'
+import { signUser } from '../utils/authAPIs'
 
-const SignIn = () => {
+const Register = () => {
 
     const navigate = useNavigate()
-    const user = useSelector((state : any) => state.user)
-    const dispatch = useDispatch()
 
     const model = yup.object({
-        email: yup.string().required(),
-        password: yup.string().required()
+        roomName: yup.string().required(),
+        roomSize: yup.string().required(),
+        detailsOfRoom: yup.string().required()
     })
 
     const{
@@ -26,14 +23,11 @@ register, reset, handleSubmit, formState : {errors}
     })
 
     const onhandleSubmit = handleSubmit((data : any)=>{
-       const { email, password} = data
+       const { roomName, roomSize, detailsOfRoom, isAvalable } = data
        signUser({
-        email, password
-       }).then((res)=>{
-        dispatch(createUser(res))
-        console.log(user);
-        
-        navigate("/")
+        roomName, roomSize, detailsOfRoom, isAvalable
+       }).then(()=>{
+        navigate("/signIn")
        })
 
        reset()
@@ -44,33 +38,49 @@ register, reset, handleSubmit, formState : {errors}
     <div>
         <Container>
             <Main onSubmit={onhandleSubmit}>
-                <Up> Sign In</Up>
-
+                <Up> Upload Rooms </Up>
                 <InputHolder>
-                    <Name> email </Name>
+                    <Name> Room Name </Name>
                     <Input 
-                    {...register("email")}
-                    placeholder="input email"/>
-                    {errors.email && <Error>error</Error>}
+                    {...register("roomName")}
+                    placeholder="input room name"/>
+                    {errors.roomName && <Error>error</Error>}
                 </InputHolder>
 
                 <InputHolder>
-                    <Name> Password </Name>
+                    <Name> Room size </Name>
                     <Input 
-                    {...register("password")}
-                    placeholder="input Password"/>
-                    {errors.password && <Error>error</Error>}
+                    {...register("roomSize")}
+                    placeholder="input room size"/>
+                    {errors.roomSize && <Error>error</Error>}
                 </InputHolder>
 
-                <Button type='submit'> SIGN IN </Button>
-                <Link to="/register" style={{"textDecoration" : "none"}}> <Sign > sign up </Sign> </Link>
+                <InputHolder>
+                    <Name> Room Description </Name>
+                    <TextArea 
+                    {...register("detailsOfRoom")}
+                    placeholder="input Room Description"/>
+                    {errors.detailsOfRoom && <Error>error</Error>}
+                </InputHolder>
+
+                <Button type='submit'> SIGN UP </Button>
+                <Link to="/signIn"> <Sign > Go Back </Sign> </Link>
             </Main>
         </Container>
     </div>
   )
 }
 
-export default SignIn
+export default Register
+
+const TextArea = styled.textarea`
+outline: none;
+border: 1px solid blue;
+width: 90%;
+padding-left: 10px;
+height: 40px;
+margin-top: 5px;
+`
 
 const Sign = styled.div`
 font-size: 15px;
@@ -85,7 +95,7 @@ outline: none;
 border: none;
 font-weight: 700;
 color: white;
-background-color: #1aa7cf;
+background-color: #248eea;
 cursor: pointer;
 margin-top: 15px;
 `
@@ -95,9 +105,7 @@ color: red;
 `
 const Input = styled.input`
 outline: none;
-border: 1px solid #1aa7cf;
-border-radius: 5px;
-background-color: transparent;
+border: 1px solid blue;
 width: 90%;
 padding-left: 10px;
 height: 40px;
@@ -133,9 +141,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-/* border: 2px solid blue; */
+border: 2px solid blue;
 border-radius: 15px;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `
 
 const Container = styled.div`
@@ -144,6 +151,4 @@ min-height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-background: rgb(34,193,195);
-background: linear-gradient(236deg, rgba(34,193,195,1) 0%, rgba(45,253,60,0.9009978991596639) 77%);
 `

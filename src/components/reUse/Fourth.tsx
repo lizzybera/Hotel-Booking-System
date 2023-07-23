@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import {BsFacebook, BsInstagram, BsTwitter, BsEyeglasses } from "react-icons/bs"
-import img from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
+import img from "../../assets/girl-in-the-pool-on-a-sunset-background-F5LL5H7-700x466.jpg"
+import img2 from "../../assets/floating-breakfast-at-amazing-hotel-villa-in-blue-2021-04-06-20-00-21-utc.jpeg"
+import img4 from "../../assets/housekeeper-cleaning-a-hotel-room-2021-04-02-19-56-56-utc.jpeg"
+import img3 from "../../assets/julian-hochgesang-nqZv8jtwLTY-unsplash.jpeg"
 
 const Fourth = () => {
   return (
@@ -24,9 +27,9 @@ const Fourth = () => {
 
                 <PicsHolder>
                   <Divs src={img}></Divs>
-                  <Divs src={img}></Divs>
-                  <Divs src={img}></Divs>
-                  <Divs src={img}></Divs>
+                  <Divs src={img2}></Divs>
+                  <Divs src={img3}></Divs>
+                  <Divs src={img4}></Divs>
                 </PicsHolder>
             </Main>
         </Container>
@@ -40,6 +43,7 @@ const Divs = styled.img`
 width: 25%;
 height: 300px;
 background-color: yellow;
+object-fit: cover;
 `
 
 const PicsHolder = styled.div`

@@ -114,6 +114,10 @@ const Line = styled.div`
 width: 100%;
 height: 1px;
 background-color: white;
+
+@media screen and (max-width: 580px) {
+  display: none;
+}
 `
 const MainHolder = styled.div`
 width: 85%;
@@ -141,6 +145,10 @@ border: 2px solid black;
   background-color: transparent;
   border: 2px solid white;
 }
+
+@media screen and (max-width: 580px) {
+  display: none;
+}
 `
 
 // const ButtonHolder = styled.div`
@@ -162,6 +170,10 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 z-index: 666;
+
+@media screen and (max-width: 580px) {
+  display: none;
+}
 `
 const Holder = styled.div`
 display: flex;
